@@ -44,7 +44,7 @@ import 'dart:ui' as ui;
 ///      });
 /// ```
 class CoachMark {
-  CoachMark({this.bgColor = const Color(0xB2212121)});
+  CoachMark({this.bgColor = const Color(0xB2212121), bool borderRadius});
 
   /// Global key to get an access for CoachMark's State
   GlobalKey<_HighlighterCoachMarkState> globalKey;
@@ -105,13 +105,13 @@ class CoachMark {
     _overlayEntryBackground = _overlayEntryBackground ??
         new OverlayEntry(
           builder: (BuildContext context) => new _HighlighterCoachMarkWidget(
-                key: globalKey,
-                bgColor: bgColor,
-                markRect: markRect,
-                markShape: markShape,
-                doClose: close,
-                children: children,
-              ),
+            key: globalKey,
+            bgColor: bgColor,
+            markRect: markRect,
+            markShape: markShape,
+            doClose: close,
+            children: children,
+          ),
         );
 
     OverlayState overlayState = Overlay.of(targetContext);
@@ -222,6 +222,10 @@ class _HighlighterCoachMarkState extends State<_HighlighterCoachMarkWidget>
                       sigmaX: _blurAnimation.value,
                       sigmaY: _blurAnimation.value),
                   child: Container(
+                    decoration: BoxDecoration(
+                        border: Border.all(
+                            color: Colors.black.withOpacity(0.5), width: 2),
+                        color: Colors.black.withOpacity(0.5)),
                     color: Colors.transparent,
                   ),
                 ),
