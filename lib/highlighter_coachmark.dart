@@ -224,8 +224,8 @@ class _HighlighterCoachMarkState extends State<_HighlighterCoachMarkWidget>
                   child: Container(
                     decoration: BoxDecoration(
                         border: Border.all(
-                            color: Colors.black.withOpacity(0.5), width: 2),
-                        color: Colors.black.withOpacity(0.5)),
+                            color: Colors.red.withOpacity(0.5), width: 5),
+                        color: Colors.red.withOpacity(0.5)),
                     color: Colors.transparent,
                   ),
                 ),
